@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 # Add parent directory to path
-sys.path. append(str(Path(__file__).parent. parent / 'src'))
+sys.path.append(str(Path(__file__).parent. parent / 'src'))
 
 from predict import load_predictor
 
@@ -28,7 +28,7 @@ def index():
     """
     Render the main page
     """
-    return render_template('index. html')
+    return render_template('index.html')
 
 
 @app.route('/predict', methods=['POST'])
@@ -98,4 +98,4 @@ def health():
 
 
 if __name__ == '__main__':
-    app. run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
