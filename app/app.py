@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 # Load predictor at startup
 try:
-    predictor = load_predictor('../models')
+    predictor = load_predictor('models')
     print("Models loaded successfully!")
 except Exception as e:
     print(f"Error loading models:  {e}")

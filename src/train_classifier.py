@@ -101,7 +101,7 @@ class DifficultyClassifier:
         
         print(f"\n{'='*50}")
         print(f"Best Model: {self.best_model_name}")
-        print(f"Best Accuracy: {best_accuracy:. 4f}")
+        print(f"Best Accuracy: {best_accuracy:.4f}")
         print(f"{'='*50}")
         
         return results
