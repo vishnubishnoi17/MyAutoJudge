@@ -21,7 +21,7 @@ class ProblemDifficultyPredictor:
             feature_extractor_classifier_path (str): Path to classifier's feature extractor
             feature_extractor_regressor_path (str): Path to regressor's feature extractor
         """
-        self. classifier = joblib.load(classifier_path)
+        self.classifier = joblib.load(classifier_path)
         self.regressor = joblib.load(regressor_path)
         self.feature_extractor_classifier = joblib.load(feature_extractor_classifier_path)
         self.feature_extractor_regressor = joblib.load(feature_extractor_regressor_path)
@@ -46,7 +46,7 @@ class ProblemDifficultyPredictor:
         
         # Combine text fields
         df['combined_text'] = (
-            df['title']. fillna('') + ' ' +
+            df['title'].fillna('') + ' ' +
             df['description'].fillna('') + ' ' +
             df['input_description'].fillna('') + ' ' +
             df['output_description'].fillna('')
@@ -71,7 +71,7 @@ class ProblemDifficultyPredictor:
         prediction = self.classifier.predict(X)[0]
         
         # Get probability if available
-        if hasattr(self. classifier, 'predict_proba'):
+        if hasattr(self.classifier, 'predict_proba'):
             probabilities = self.classifier.predict_proba(X)[0]
             return prediction, probabilities
         
@@ -106,10 +106,10 @@ class ProblemDifficultyPredictor:
             dict: Prediction results
         """
         # Preprocess input
-        df = self. preprocess_input(title, description, input_description, output_description)
+        df = self.preprocess_input(title, description, input_description, output_description)
         
         # Predict class
-        predicted_class, probabilities = self. predict_class(df)
+        predicted_class, probabilities = self.predict_class(df)
         
         # Predict score
         predicted_score = self.predict_score(df)

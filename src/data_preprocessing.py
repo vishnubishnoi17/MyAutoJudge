@@ -17,7 +17,7 @@ class DataPreprocessor:
         Args:
             data_path (str): Path to the JSONL dataset file
         """
-        self. data_path = data_path
+        self.data_path = data_path
         self.df = None
     
     def load_data(self):
@@ -35,7 +35,7 @@ class DataPreprocessor:
                 for obj in reader:
                     data_list.append(obj)
             
-            self.df = pd. DataFrame(data_list)
+            self.df = pd.DataFrame(data_list)
             print(f"Loaded {len(self.df)} records")
             return self.df
         
@@ -60,7 +60,7 @@ class DataPreprocessor:
         text = str(text)
         
         # Remove extra whitespace
-        text = re. sub(r'\s+', ' ', text)
+        text = re.sub(r'\s+', ' ', text)
         
         # Remove special characters but keep mathematical symbols
         # text = re.sub(r'[^\w\s\+\-\*\/\=\<\>\(\)\[\]\{\}]', '', text)
@@ -83,8 +83,8 @@ class DataPreprocessor:
         
         # Combine all text fields
         self.df['combined_text'] = (
-            self.df['title']. fillna('') + ' ' +
-            self.df['description']. fillna('') + ' ' +
+            self.df['title'].fillna('') + ' ' +
+            self.df['description'].fillna('') + ' ' +
             self.df['input_description'].fillna('') + ' ' +
             self.df['output_description'].fillna('')
         )
@@ -108,7 +108,7 @@ class DataPreprocessor:
         
         for col in text_columns: 
             if col in self.df.columns:
-                self.df[col]. fillna('', inplace=True)
+                self.df[col].fillna('', inplace=True)
         
         # Drop rows with missing target values
         if 'problem_class' in self.df. columns:
@@ -138,9 +138,9 @@ class DataPreprocessor:
         print("\n=== Dataset Statistics ===")
         print(f"Total samples: {len(self.df)}")
         
-        if 'problem_class' in self. df.columns:
+        if 'problem_class' in self.df.columns:
             print("\nClass distribution:")
-            print(self. df['problem_class'].value_counts())
+            print(self.df['problem_class'].value_counts())
         
         if 'problem_score' in self. df.columns:
             print(f"\nScore range: {self.df['problem_score'].min()} - {self.df['problem_score'].max()}")
