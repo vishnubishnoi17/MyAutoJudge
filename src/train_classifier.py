@@ -116,12 +116,12 @@ class DifficultyClassifier:
         Path(output_dir).mkdir(parents=True, exist_ok=True)
         
         # Save model
-        model_path = f"{output_dir}/classifier_{self.best_model_name}. pkl"
+        model_path = f"{output_dir}/classifier_{self.best_model_name}.pkl"
         joblib.dump(self.best_model, model_path)
         print(f"\nModel saved to {model_path}")
         
         # Save feature extractor
-        extractor_path = f"{output_dir}/feature_extractor_classifier. pkl"
+        extractor_path = f"{output_dir}/feature_extractor_classifier.pkl"
         joblib.dump(self.feature_extractor, extractor_path)
         print(f"Feature extractor saved to {extractor_path}")
     
