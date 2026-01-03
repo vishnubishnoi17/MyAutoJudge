@@ -272,50 +272,7 @@ Algorithm-specific keywords:
 
 ---
 
-## 🌐 API Endpoints
 
-### `GET /`
-Returns the main web interface.
-
-### `POST /predict`
-Makes a prediction for a programming problem.
-
-**Request:**
-```json
-{
-  "title": "Two Sum",
-  "description": "Given an array of integers, return indices of two numbers that add up to target",
-  "input_description": "Array of integers and target value",
-  "output_description": "Indices of the two numbers"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "predicted_class": "hard",
-  "predicted_score": 5.45,
-  "probabilities": {
-    "Easy": 0.24,
-    "Hard": 0.86,
-    "Medium": 0.17
-  }
-}
-```
-
-### `GET /health`
-Health check endpoint.
-
-**Response:**
-```json
-{
-  "status": "healthy",
-  "models_loaded": true
-}
-```
-
----
 
 ## 📖 Dataset Format
 
