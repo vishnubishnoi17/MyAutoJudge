@@ -500,7 +500,6 @@ This project is licensed under the MIT License - see LICENSE file for details.
    -   AUTHOR :- Vishnu Bishnoi 
    -   Enrollment No. - 24114106
    -   Contact :- 7297052429
-
 **💡 Have suggestions or found a bug? Open an [issue](https://github.com/vishnubishnoi17/MyAutoJudge/issues)!**
 
 Built with ❤️ for automatic programming problem difficulty assessment
