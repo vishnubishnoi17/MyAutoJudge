@@ -298,89 +298,7 @@ The dataset (`data/problems_data.jsonl`) contains competitive programming proble
 | `problem_class` | string | Difficulty: "easy", "medium", or "hard" |
 | `problem_score` | float | Numerical difficulty (0-10 scale) |
 
----
 
-## 🧪 Testing
-
-### Test the Prediction Module
-```bash
-python src/predict.py
-```
-
-### Test with cURL
-```bash
-curl -X POST http://localhost:5000/predict \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Two Sum",
-    "description": "Given an array of integers, return indices of two numbers that add up to target",
-    "input_description": "Array and target integer",
-    "output_description": "Two indices"
-  }'
-```
-
----
-
-## 🔧 Troubleshooting
-
-### Models Not Loading
-```bash
-# Verify model files exist
-ls -la models/*.pkl
-# Should display 4 files:
-# - classifier_random_forest.pkl
-# - regressor_random_forest.pkl
-# - feature_extractor_classifier.pkl
-# - feature_extractor_regressor.pkl
-```
-
-### Port 5000 Already in Use
-```bash
-# Find process using port 5000
-lsof -i :5000
-
-# Kill the process
-kill -9 <PID>
-
-# Or run Flask on different port
-python app/app.py --port 8000
-```
-
-### Virtual Environment Issues
-```bash
-# Recreate virtual environment from scratch
-rm -rf venv
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Import Errors
-```bash
-# Ensure you're in project root directory
-cd MyAutoJudge
-
-# Verify src/ folder is in Python path
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-
-# Then run the app
-python app/app.py
-```
-
----
-
-## 🎨 Web Interface Features
-
-- ✅ Real-time predictions via AJAX
-- ✅ Loading animations during processing
-- ✅ Probability visualization with progress bars
-- ✅ Error handling with user-friendly messages
-- ✅ Fully responsive mobile design
-- ✅ Form validation (description required)
-- ✅ Clear button to reset form
-- ✅ Smooth scrolling to results
-
----
 
 ## 📈 Future Enhancements
 
@@ -450,13 +368,6 @@ python app/app.py
 
 ---
 
-## 👨‍💻 Development
-
-### Project Standards
-- Python code follows PEP 8 style guidelines
-- All models saved with `.pkl` extension using joblib
-- Feature extractors trained and saved with models
-- Data preprocessing is idempotent
 
 ### Key Dependencies
 See `requirements.txt` for complete list with versions.
